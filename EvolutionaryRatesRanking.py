@@ -22,7 +22,7 @@ import glob
 #as measured by tree length divided by taxa. 
 #THIS SHOULD BE EXECUTED IN A FOLDER WITH SINGLE GENE TREES. As written works with RAxML_bipartition trees.
 #If your alignments had different format than change variable directly below
-treeFileFormat='*.fas.out' #This should be extension for gene trees in newick format
+treeFileFormat='*.phy.out' #This should be extension for gene trees in newick format
 slow2Fast=True  ##Change to False if you want fastest first in the list descending to slow
 path='' #PATH WITH TREES. As written, directory from which this script is executed
 ####################################################################################################
@@ -50,5 +50,5 @@ else:
 #this will write a file with alignments in order of slowest evolRate to fastest
 with open("evolRatesOrdered.txt","w") as evolRatesFile: #Old file will be overwritten if it exists 
 	for i in ratesList:	
-		y=i.split(".")		#This and the next line makes assumption the trees are RAxML_bipartitions.alignment.out
+		y=i.split(".")		#This and the next line makes assumption the trees are RAxML_bestTree.alignment.out
 		evolRatesFile.write(y[1] + "." + y[2] + "\n") #If used RAxML then list will be in format of files used for individual RAxML gene trees
