@@ -1,9 +1,4 @@
 #!/usr/bin/python
-from __future__ import division
-
-import dendropy
-import os
-import glob
 
 #########################################################################################################################
 #This script was written by Nathan Whelan.  
@@ -16,16 +11,23 @@ import glob
 # OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS WITH THE 
 # SOFTWARE.
 ##########################################################################################################################
-
 ###################################################################################################
 #This script will create a list of alignments sorted by evolutionary rate
 #as measured by tree length divided by taxa. 
 #THIS SHOULD BE EXECUTED IN A FOLDER WITH SINGLE GENE TREES. As written works with RAxML_bipartition trees.
 #If your alignments had different format than change variable directly below
+####################################################################################################
+
+from __future__ import division
+
+import dendropy
+import os
+import glob
+
 treeFileFormat='*.phy.out' #This should be extension for gene trees in newick format
 slow2Fast=True  ##Change to False if you want fastest first in the list descending to slow
 path='' #PATH WITH TREES. As written, directory from which this script is executed
-####################################################################################################
+
 
 #Function that returns evol rate for a dendropy.Tree object
 def evolRate(TREE):
