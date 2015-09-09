@@ -14,7 +14,7 @@
 ###################################################################################################
 #This script will create a list of alignments sorted by evolutionary rate
 #as measured by tree length divided by taxa. 
-#THIS SHOULD BE EXECUTED IN A FOLDER WITH SINGLE GENE TREES. As written works with RAxML_bipartition trees.
+#THIS SHOULD BE EXECUTED IN A FOLDER WITH SINGLE GENE TREES. As written works with RAxML_bestTree tree files.
 #If your alignments had different format than change variable directly below
 ####################################################################################################
 
